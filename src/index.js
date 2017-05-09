@@ -1,1 +1,5 @@
-document.write("hello from webpack");
+const hello = () => {
+	document.write("hello babel");
+}
+
+hello();
