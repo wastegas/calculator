@@ -1,0 +1,27 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "react redux calculator",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wastegas/calculator.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "freecodecamp",
+    "wastegas",
+    "calculator",
+    "javascript"
+  ],
+  "author": "Ronnie Baron <wastegas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wastegas/calculator/issues"
+  },
+  "homepage": "https://github.com/wastegas/calculator#readme"
+}
