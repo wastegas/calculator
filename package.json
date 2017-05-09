@@ -4,6 +4,7 @@
   "description": "react redux calculator",
   "main": "src/index.js",
   "scripts": {
+	"webpack": "webpack --watch",
     "test": "jest"
   },
   "repository": {
