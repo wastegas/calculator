@@ -7,3 +7,8 @@ Setup
 ```
 npm install
 ```
+Test
+----
+```
+npm run test
+```
