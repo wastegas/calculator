@@ -1,9 +1,13 @@
-export default function expressionReducer(state = {
-	expression: "",
-}, action) {
+import { BUILD_EXPRESSION } from '../constants/actionTypes';
+
+const initialState = {
+	expression: ""
+}
+
+export default function expressionReducer(state = initialState, action) {
 	switch(action.type) {
-		case "BUILD_EXPRESSION":
-			state = {
+		case BUILD_EXPRESSION:
+			return {
 				...state,
 				expression: state.expression.concat(action.payload)
 			}
@@ -11,5 +15,4 @@ export default function expressionReducer(state = {
 		default:
 			return state;
 	}
-	return state;
 }
