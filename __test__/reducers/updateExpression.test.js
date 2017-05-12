@@ -2,12 +2,16 @@ import * as types from '../../src/constants/actionTypes';
 import expressionReducer from '../../src/reducers/expressionReducer';
 
 describe('expressionReducer', () => {
-	it('should return default state', () => {
+	it('should handle UPDATE_EXPRESSION', () => {
 		expect(
-			expressionReducer({type: "",})
+			expressionReducer({expression:""}, 
+				{
+					type: types.UPDATE_EXPRESSION, 
+					payload: "1"
+				})
 		).toEqual(
 			{
-				expression: ""
+				expression: "1"
 			}
 		)
 	})
