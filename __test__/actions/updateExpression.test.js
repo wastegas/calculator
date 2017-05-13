@@ -1,4 +1,4 @@
-import updateExpression from '../../src/actions/updateExpression.js';
+import updateExpression from '../../src/actions/expressionActions.js';
 import * as types from '../../src/constants/actionTypes';
 
 describe('updateExpression', () => {
