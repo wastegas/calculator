@@ -18,5 +18,11 @@ describe('actions', () => {
 
 		expect(actions.sliceExpression()).toEqual(expectedAction)
 	})
+	it('should create an action CLEAR_EXPRESSION', () => {
+		const expectedAction = {
+			type: types.CLEAR_EXPRESSION
+		}
+		expect(actions.clearExpression()).toEqual(expectedAction)
+	})
 
 })
