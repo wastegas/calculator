@@ -38,4 +38,16 @@ describe('expressionReducer', () => {
 				}
 			)
 	})
+	it('should handle CLEAR_EXPRESSION', () => {
+		expect(
+			expressionReducer({expression:"1+1"},
+					{
+						type: types.CLEAR_EXPRESSION
+					})
+			).toEqual(
+				{
+					expression: ""
+				}
+			)
+	})
 })
