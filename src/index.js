@@ -1,5 +1,8 @@
-const hello = () => {
-	document.write("hello babel");
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Calculator from './components/calculator';
 
-hello();
+ReactDOM.render(
+	<Calculator />,
+	document.getElementById('root')
+);
