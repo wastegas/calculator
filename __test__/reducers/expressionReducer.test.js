@@ -2,6 +2,18 @@ import * as types from '../../src/constants/actionTypes';
 import expressionReducer from '../../src/reducers/expressionReducer';
 
 describe('expressionReducer', () => {
+	it('should handle undefined type', () => {
+		expect(
+			expressionReducer({expression:""},
+				{
+					type: undefined
+				})
+		).toEqual(
+			{
+				expression: ""
+			}
+		)
+	})
 	it('should handle UPDATE_EXPRESSION', () => {
 		expect(
 			expressionReducer({expression:""}, 
