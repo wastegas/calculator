@@ -5,7 +5,7 @@ const initialState = {
 	firstentry: false
 }
 
-export default displayReducer(state = initialState, action) {
+export default function displayReducer(state = initialState, action) {
 	switch(action.type) {
 		case UPDATE_DISPLAY:
 			return {
@@ -17,7 +17,7 @@ export default displayReducer(state = initialState, action) {
 		case RESULT_DISPLAY:
 			return {
 				...state,
-				display: action.payload,
+				display: eval(action.payload),
 				firstentry: true
 			}
 			break;
