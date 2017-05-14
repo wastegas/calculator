@@ -12,3 +12,8 @@ Test
 ```
 npm run test
 ```
+Start Dev Server
+----------------
+```
+npm run start
+```
