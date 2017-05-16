@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../actions/';
 
 const Display = function() {
 	return <p>0</p>
@@ -57,4 +60,18 @@ class Calculator extends Component {
 	}
 }
 
-export default Calculator;
+function mapStateToProps(state, prop) {
+	return {
+		expression: state.expression,
+		display: state.display,
+		firstentry: state.firstentry
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		action: bindActionCreators(actionCreators, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calculator);
