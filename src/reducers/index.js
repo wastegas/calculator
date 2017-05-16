@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import expressReducer from './expressionReducer';
+import expressionReducer from './expressionReducer';
 import displayReducer from './displayReducer';
 
 export default combineReducers({
