@@ -1,5 +1,5 @@
 import * as types from '../../src/constants/actionTypes';
-import * as actions from '../../src/actions/displayActions';
+import * as actions from '../../src/actions/';
 
 describe('actions', () => {
 	it('should create an action UPDATE_DISPLAY', () => {
