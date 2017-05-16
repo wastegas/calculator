@@ -1,7 +1,7 @@
 import { UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
 
 const initialState = {
-	display: "",
+	display: "0",
 	firstentry: false
 }
 
