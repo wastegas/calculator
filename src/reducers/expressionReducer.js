@@ -1,10 +1,6 @@
 import { UPDATE_EXPRESSION, SLICE_EXPRESSION, CLEAR_EXPRESSION } from '../constants/actionTypes';
 
-const initialState = {
-	expression: ""
-}
-
-export default function expressionReducer(state = initialState, action) {
+export default function expression(state = "", action) {
 	switch(action.type) {
 		case UPDATE_EXPRESSION:
 			return {
