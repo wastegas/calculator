@@ -4,3 +4,4 @@ export const   CLEAR_EXPRESSION =  'CLEAR_EXPRESSION';
 export const     UPDATE_DISPLAY = 'UPDATE_DISPLAY';
 export const     RESULT_DISPLAY = 'RESULT_DISPLAY';
 export const      CLEAR_DISPLAY = 'CLEAR_DISPLAY';
+export const TOGGLE_FIRSTENTRY  = 'TOGGLE_FIRSTENTRY';
