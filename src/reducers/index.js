@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import expressionReducer from './expressionReducer';
-import displayReducer from './displayReducer';
+import expression from './expressionReducer';
+import display from './displayReducer';
+import firstentry from './firstentry';
 
 export default combineReducers({
-	expressionReducer,
-	displayReducer
+	expression,
+	display,
+	firstentry
 })
