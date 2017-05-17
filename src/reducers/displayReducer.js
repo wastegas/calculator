@@ -1,11 +1,7 @@
 import { UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
 
-const initialState = {
-	display: "0",
-	firstentry: false
-}
 
-export default function displayReducer(state = initialState, action) {
+export default function display(state = "0", action) {
 	switch(action.type) {
 		case UPDATE_DISPLAY:
 			return {
