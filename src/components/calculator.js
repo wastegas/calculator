@@ -3,8 +3,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/';
 
-const Display = function() {
-	return <p>0</p>
+function Display(props) {
+	return (
+		<div>
+			{props.display}
+		</div>
+	   )
 }
 
 function Keys(props) {
@@ -50,10 +54,14 @@ return (
 }
 
 class Calculator extends Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
+		console.log(this.props);
 		return (
 			<div>
-				<Display />
+				<Display display={this.props.display} />
 				<Buttons />
 			</div>
 		)
