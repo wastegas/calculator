@@ -24,7 +24,6 @@ describe('display', () => {
 			).toEqual(
 				{
 					display: "1",
-					firstentry: false
 				}
 			)
 		expect(
@@ -36,7 +35,6 @@ describe('display', () => {
 			).toEqual(
 				{
 					display: "1+",
-					firstentry: false
 				}
 			)
 		expect(
@@ -48,7 +46,6 @@ describe('display', () => {
 			).toEqual(
 				{
 					display: "1+1",
-					firstentry: false
 				}
 			)
 	})
@@ -62,7 +59,6 @@ describe('display', () => {
 			).toEqual(
 				{
 					display: 2,
-					firstentry:true
 				}
 			)
 	})
@@ -75,7 +71,6 @@ describe('display', () => {
 			).toEqual(
 				{
 					display: "",
-					firstentry: true
 				}
 			)
 	})
