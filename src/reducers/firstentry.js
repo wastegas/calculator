@@ -5,7 +5,7 @@ export default function firstentry(state = false, action) {
 		case TOGGLE_FIRSTENTRY:
 			return state = {
 				...state,
-				firstentry: action.payload
+				firstentry: !state.firstentry 
 			}
 			break;
 			default:
