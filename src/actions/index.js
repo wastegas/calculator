@@ -31,3 +31,9 @@ export function clearDisplay() {
 		type: types.CLEAR_DISPLAY
 	}
 }
+
+export function toggleFirstEntry() {
+	return {
+		type: types.TOGGLE_FIRSTENTRY
+	}
+}
