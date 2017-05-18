@@ -1,10 +1,10 @@
 import * as types from '../../src/constants/actionTypes';
-import expressionReducer from '../../src/reducers/expressionReducer';
+import expression from '../../src/reducers/expression';
 
-describe('expressionReducer', () => {
+describe('expression', () => {
 	it('should handle undefined type', () => {
 		expect(
-			expressionReducer({expression:""},
+			expression({expression:""},
 				{
 					type: undefined
 				})
@@ -16,7 +16,7 @@ describe('expressionReducer', () => {
 	})
 	it('should handle UPDATE_EXPRESSION', () => {
 		expect(
-			expressionReducer({expression:""}, 
+			expression({expression:""}, 
 				{
 					type: types.UPDATE_EXPRESSION, 
 					payload: "1"
@@ -28,7 +28,7 @@ describe('expressionReducer', () => {
 		)
 	})
 	expect(
-			expressionReducer({expression:"1+"},
+			expression({expression:"1+"},
 					{
 						type: types.UPDATE_EXPRESSION,
 						payload: "1"
@@ -40,7 +40,7 @@ describe('expressionReducer', () => {
 			)
 	it('should handle SLICE_EXPRESSION', () => {
 		expect(
-			expressionReducer({expression:"1+1"},
+			expression({expression:"1+1"},
 					{
 						type: types.SLICE_EXPRESSION
 					})
@@ -52,7 +52,7 @@ describe('expressionReducer', () => {
 	})
 	it('should handle CLEAR_EXPRESSION', () => {
 		expect(
-			expressionReducer({expression:"1+1"},
+			expression({expression:"1+1"},
 					{
 						type: types.CLEAR_EXPRESSION
 					})

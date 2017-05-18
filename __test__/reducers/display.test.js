@@ -1,10 +1,10 @@
 import * as types from '../../src/constants/actionTypes';
-import displayReducer from '../../src/reducers/displayReducer';
+import display from '../../src/reducers/display';
 
-describe('displayReducer', () => {
+describe('display', () => {
 	it('should handle undefined action', () => {
 		expect(
-			displayReducer({display:"",},
+			display({display:"",},
 				{
 					type: undefined
 				})
@@ -16,7 +16,7 @@ describe('displayReducer', () => {
 	})
 	it('should handle UPDATE_DISPLAY', () => {
 		expect(
-			displayReducer({display:""},
+			display({display:""},
 				{
 					type: types.UPDATE_DISPLAY,
 					payload: "1"
@@ -28,7 +28,7 @@ describe('displayReducer', () => {
 				}
 			)
 		expect(
-			displayReducer({display:"1"},
+			display({display:"1"},
 				{
 					type: types.UPDATE_DISPLAY,
 					payload: "+"
@@ -40,7 +40,7 @@ describe('displayReducer', () => {
 				}
 			)
 		expect(
-			displayReducer({display:"1+"},
+			display({display:"1+"},
 				{
 					type: types.UPDATE_DISPLAY,
 					payload: "1"
@@ -54,7 +54,7 @@ describe('displayReducer', () => {
 	})
 	it('should handle RESULT_DISPLAY', () => {
 		expect(
-			displayReducer({display:"1"},
+			display({display:"1"},
 				{
 					type: types.RESULT_DISPLAY,
 					payload: "1+1"
@@ -68,7 +68,7 @@ describe('displayReducer', () => {
 	})
 	it('should handle CLEAR_DISPLAY', () => {
 		expect(
-			displayReducer({display:2},
+			display({display:2},
 				{
 					type: types.CLEAR_DISPLAY
 				})
