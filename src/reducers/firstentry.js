@@ -1,6 +1,6 @@
 import { TOGGLE_FIRSTENTRY } from '../constants/actionTypes';
 
-export default function firstentry(state = false, action) {
+export default function firstentry(state = {firstentry: true}, action) {
 	switch(action.type) {
 		case TOGGLE_FIRSTENTRY:
 			return state = {
