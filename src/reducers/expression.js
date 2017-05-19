@@ -1,6 +1,6 @@
 import { UPDATE_EXPRESSION, SLICE_EXPRESSION, CLEAR_EXPRESSION } from '../constants/actionTypes';
 
-export default function expression(state = "", action) {
+export default function expression(state = {expression: ""}, action) {
 	switch(action.type) {
 		case UPDATE_EXPRESSION:
 			return {
