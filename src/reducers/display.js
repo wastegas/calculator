@@ -1,7 +1,7 @@
 import { UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
 
 
-export default function display(state = "0", action) {
+export default function display(state = {display:"0"}, action) {
 	switch(action.type) {
 		case UPDATE_DISPLAY:
 			return {
