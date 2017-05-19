@@ -14,16 +14,17 @@ function Display(props) {
 function Keys(props) {
 	const keys = props.keys;
 	const item = keys.map((v, key) => 
-		 <button className={v.oper} key={key} onClick={() => props.onClick({v})}>{v.val}</button>
+		 <button className={v.oper} key={key} onClick={() => props.onClick(v.val)}>{v.val}</button>
 	);
 		return(<div>{item}</div>)
 }
 
 class Buttons extends Component {
 			
-	handleClick(v) {
-		console.log(v);
-	}
+	//handleClick(v) {
+	//	this.props.action.updateExpression(v);
+	//	this.props.action.updateDisplay(v);
+	//}
 	render() {
 			const keys = [
 				{val:"AC", oper:"func"},
@@ -48,7 +49,7 @@ class Buttons extends Component {
 				{val:"+",  oper:"oper"}
 			]
 return (
-			<Keys keys={keys} onClick={(n) => this.handleClick(n)} />
+			<Keys keys={keys} onClick={(n) => this.props.onClick(n)} />
 		)
 	}
 }
@@ -57,12 +58,18 @@ class Calculator extends Component {
 	constructor(props) {
 		super(props);
 	}
+	handleClick(v) {
+		console.log(v);
+		this.props.action.updateDisplay(v);
+	}
 	render() {
-		console.log(this.props);
+
+		const { display, expression } = this.props;
+
 		return (
 			<div>
-				<Display display={this.props.display} />
-				<Buttons />
+				<Display display={display} />
+				<Buttons onClick={(n) => this.handleClick(n)}/>
 			</div>
 		)
 	}
@@ -71,7 +78,7 @@ class Calculator extends Component {
 function mapStateToProps(state, prop) {
 	return {
 		expression: state.expression,
-		display: state.display,
+		display: state.display.display,
 		firstentry: state.firstentry
 	}
 }
