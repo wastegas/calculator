@@ -1,8 +1,14 @@
-import { UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
+import { FIRSTENTRY_DISPLAY, UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
 
 
 export default function display(state = {display:"0"}, action) {
 	switch(action.type) {
+		case FIRSTENTRY_DISPLAY:
+			return {
+				...state,
+				display: action.payload
+			}
+			break;
 		case UPDATE_DISPLAY:
 			return {
 				...state,
