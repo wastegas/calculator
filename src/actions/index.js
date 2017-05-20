@@ -21,11 +21,8 @@ export function updateDisplay(text) {
 			dispatch({type: types.FIRSTENTRY_DISPLAY , payload: text})
 		} else
 			dispatch({type: types.UPDATE_DISPLAY, payload: text})
+		dispatch({type: types.UPDATE_EXPRESSION, payload: text})
 	}
-	// return {
-	//	type: types.UPDATE_DISPLAY,
-	//	payload: text
-	//}
 }
 
 export function resultDisplay(text) {
