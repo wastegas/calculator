@@ -1,8 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 export function updateExpression(text) {
-	//return { type: types.UPDATE_EXPRESSION, payload: text}
-
+	return { type: types.UPDATE_EXPRESSION, payload: text}
 }
 
 export function sliceExpression() {
@@ -15,12 +14,11 @@ export function clearExpression() {
 
 export function updateDisplay(text) {
 	
-	return(dispatch, getState) => {
+	return(dispatch,getState) => {
 		const { firstentry } = getState().firstentry;
-		console.log(firstentry);
 		if (firstentry) { 
-			dispatch({type: types.FIRSTENTRY_DISPLAY , payload: text})
 			dispatch({type: types.TOGGLE_FIRSTENTRY})
+			dispatch({type: types.FIRSTENTRY_DISPLAY , payload: text})
 		} else
 			dispatch({type: types.UPDATE_DISPLAY, payload: text})
 	}
