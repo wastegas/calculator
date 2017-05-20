@@ -60,7 +60,6 @@ class Calculator extends Component {
 	}
 	handleClick(v) {
 		this.props.action.updateDisplay(v);
-		this.props.action.updateExpression(v);
 	}
 	render() {
 
