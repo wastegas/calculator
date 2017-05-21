@@ -24,7 +24,7 @@ export default function display(state = {display:"0"}, action) {
 		case CLEAR_DISPLAY:
 			return {
 				...state,
-				display: "",
+				display: "0",
 			}
 			break;
 		default:
