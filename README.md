@@ -1,6 +1,6 @@
 Simple Calculator
 =================
-A freeCodeCamp project
+A React-Redux project
 
 Setup
 -----
