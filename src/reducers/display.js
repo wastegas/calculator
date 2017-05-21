@@ -18,7 +18,7 @@ export default function display(state = {display:"0"}, action) {
 		case RESULT_DISPLAY:
 			return {
 				...state,
-				display: eval(action.payload),
+				display: action.payload,
 			}
 			break;
 		case CLEAR_DISPLAY:
