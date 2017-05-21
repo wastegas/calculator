@@ -9,7 +9,10 @@ export function resetCalculator() {
 }
 
 export function sliceExpression() {
-	return { type: types.SLICE_EXPRESSION }
+	return(dispatch) => {
+		dispatch({ type: types.SLICE_EXPRESSION });
+		dispatch({ type: types.TOGGLE_FIRSTENTRY });
+	}
 }
 
 export function updateDisplay(text) {
