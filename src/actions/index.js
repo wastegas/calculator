@@ -32,9 +32,12 @@ export function updateDisplay(text) {
 	}
 }
 
-export function resultDisplay(text) {
-	return {
-		type: types.RESULT_DISPLAY,
-		payload: eval(text)
+export function resultDisplay() {
+	return (dispatch, getState) => {
+		const { expression } = getState().expression
+		console.log(expression.join(''));
+		dispatch({type: types.RESULT_DISPLAY, payload: eval(expression.join(''))});
+		dispatch({type: types.CLEAR_EXPRESSION});
+		dispatch({type: types.TOGGLE_FIRSTENTRY});
 	}
 }
