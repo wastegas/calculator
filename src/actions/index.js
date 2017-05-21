@@ -4,7 +4,7 @@ export function resetCalculator() {
 	return(dispatch) => {
 		dispatch({type: types.CLEAR_EXPRESSION });
 		dispatch({type: types.CLEAR_DISPLAY });
-		dispatch({type: types.TOGGLE_FIRSTENTRY });
+		dispatch({type: types.RESET_FIRSTENTRY});
 	}
 }
 
@@ -38,6 +38,6 @@ export function resultDisplay() {
 		console.log(expression.join(''));
 		dispatch({type: types.RESULT_DISPLAY, payload: eval(expression.join(''))});
 		dispatch({type: types.CLEAR_EXPRESSION});
-		dispatch({type: types.TOGGLE_FIRSTENTRY});
+		dispatch({type: types.RESET_FIRSTENTRY});
 	}
 }
