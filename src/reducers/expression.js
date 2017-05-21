@@ -17,7 +17,7 @@ export default function expression(state = {expression: []}, action) {
 		case CLEAR_EXPRESSION:
 			return {
 				...state,
-				expression: ""
+				expression: []
 			}
 			break;
 		default:
