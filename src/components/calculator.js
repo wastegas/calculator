@@ -63,6 +63,10 @@ class Calculator extends Component {
 			this.props.action.resetCalculator();
 			return;
 		}
+		if (v === '=') {
+			this.props.action.resultDisplay();
+			return;
+		}
 		this.props.action.updateDisplay(v);
 	}
 	render() {
