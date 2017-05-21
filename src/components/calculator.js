@@ -63,6 +63,10 @@ class Calculator extends Component {
 			this.props.action.resetCalculator();
 			return;
 		}
+		if (v === 'C') {
+			this.props.action.sliceExpression();
+			return;
+		}
 		if (v === '=') {
 			this.props.action.resultDisplay();
 			return;
