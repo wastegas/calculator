@@ -59,6 +59,10 @@ class Calculator extends Component {
 		super(props);
 	}
 	handleClick(v) {
+		if (v === 'AC') {
+			this.props.action.resetCalculator();
+			return;
+		}
 		this.props.action.updateDisplay(v);
 	}
 	render() {
