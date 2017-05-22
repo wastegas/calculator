@@ -6,7 +6,7 @@ import '../styles.scss';
 
 function Display(props) {
 	return (
-		<div>
+		<div className='display'>
 			{props.display}
 		</div>
 	   )
@@ -17,7 +17,7 @@ function Keys(props) {
 	const item = keys.map((v, key) => 
 		 <button className={v.oper} key={key} onClick={() => props.onClick(v.val)}>{v.val}</button>
 	);
-		return(<div>{item}</div>)
+		return(<div className='keys'>{item}</div>)
 }
 
 class Buttons extends Component {
@@ -79,7 +79,7 @@ class Calculator extends Component {
 		const { display, expression } = this.props;
 
 		return (
-			<div>
+			<div className='calculator'>
 				<Display display={display} />
 				<Buttons onClick={(n) => this.handleClick(n)}/>
 			</div>
