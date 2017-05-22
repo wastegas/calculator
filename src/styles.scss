@@ -1,5 +1,57 @@
-$variable: blue;
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+$orbitron: "orbitron", sans-serif;
+$display-bgrnd: rgb(177, 186, 169);
+$body-bgrnd: rgb(178, 169, 186);
+$key-bgrnd: rgb(186, 169, 177);
+
+* { box-sizing: border-box; }
 
 body {
-	background-color: $variable;
+	background-color: $body-bgrnd;
+}
+
+#root {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+.calculator {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	border: 3px solid darkslategray;
+	box-shadow: 0 0 5px;
+}
+
+.calculator {
+	.display {
+		background-color: $display-bgrnd;
+		font-family: $orbitron;
+		height: 80px;
+		width: 100%;
+		text-align: right;
+		font-size: 20px;
+		padding: 30px 3px  30px 3px;
+		border: 1px solid black;
+	}
+}
+
+.calculator {
+	button {
+		background-color: $key-bgrnd;
+		font-size: medium;
+		height: 80px;
+		width: 25%;
+	}
+}
+
+@media (min-width: 320px) {
+	.calculator {
+		width: 320px;
+	}
 }
