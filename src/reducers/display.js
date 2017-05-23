@@ -1,4 +1,4 @@
-import { FIRSTENTRY_DISPLAY, UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
+import { FIRSTENTRY_DISPLAY, SLICE_DISPLAY, UPDATE_DISPLAY, RESULT_DISPLAY, CLEAR_DISPLAY } from '../constants/actionTypes';
 
 
 export default function display(state = {display:"0"}, action) {
@@ -13,6 +13,12 @@ export default function display(state = {display:"0"}, action) {
 			return {
 				...state,
 				display: state.display.concat(action.payload),
+			}
+			break;
+		case SLICE_DISPLAY:
+			return {
+				...state,
+				display: state.display.slice(0, -1)
 			}
 			break;
 		case RESULT_DISPLAY:
