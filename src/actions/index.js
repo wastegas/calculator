@@ -9,9 +9,13 @@ export function resetCalculator() {
 }
 
 export function sliceExpression() {
-	return(dispatch) => {
+	return(dispatch, getState) => {
+		const { expression } = getState().expression;
+		if ( parseInt(expression.slice(-1)) || parseInt(expression.slice(-1)) === '.') {
+			dispatch({ type: types.SLICE_DISPLAY });
+		}
 		dispatch({ type: types.SLICE_EXPRESSION });
-		dispatch({ type: types.TOGGLE_FIRSTENTRY });
+		//dispatch({ type: types.TOGGLE_FIRSTENTRY });
 	}
 }
 
