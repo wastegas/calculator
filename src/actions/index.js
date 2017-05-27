@@ -11,7 +11,7 @@ export function resetCalculator() {
 export function sliceExpression() {
 	return(dispatch, getState) => {
 		const { expression } = getState().expression;
-		if ( parseInt(expression.slice(-1)) || expression.slice(-1)[0] === '.') {
+		if ( parseInt(expression.slice(-1)) || expression.slice(-1)[0] === '.' || expression.slice(-1)[0] === '0') {
 			dispatch({ type: types.SLICE_DISPLAY });
 		} else {
 			dispatch({ type: types.TOGGLE_FIRSTENTRY });
