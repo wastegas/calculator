@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Display from './display';
 import * as actionCreators from '../actions/';
 import '../styles.scss';
-
-function Display(props) {
-	return (
-		<div className='display'>
-			{props.display}
-		</div>
-	   )
-}
 
 function Keys(props) {
 	const keys = props.keys;
@@ -76,11 +69,11 @@ class Calculator extends Component {
 	}
 	render() {
 
-		const { display, expression } = this.props;
+		const { expression } = this.props;
 
 		return (
 			<div className='calculator'>
-				<Display display={display} />
+				<Display  />
 				<Buttons onClick={(n) => this.handleClick(n)}/>
 			</div>
 		)
@@ -90,10 +83,9 @@ class Calculator extends Component {
 function mapStateToProps(state, prop) {
 	return {
 		expression: state.expression,
-		display: state.display.display,
-		firstentry: state.firstentry
 	}
 }
+
 
 function mapDispatchToProps(dispatch) {
 	return {
