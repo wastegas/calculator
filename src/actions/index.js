@@ -2,49 +2,114 @@ import * as types from '../constants/actionTypes';
 
 export function resetCalculator() {
 	return(dispatch) => {
-		dispatch({type: types.CLEAR_EXPRESSION });
-		dispatch({type: types.CLEAR_DISPLAY });
-		dispatch({type: types.RESET_FIRSTENTRY});
+		dispatch(clearExpression());
+		dispatch(clearDisplay());
+		dispatch(resetExpression());
 	}
 }
 
-export function sliceExpression() {
+function clearExpression() {
+	return {
+		type: types.CLEAR_EXPRESSION
+	}
+}
+
+function clearDisplay() {
+	return {
+		type: types.CLEAR_DISPLAY
+	}
+}
+
+function resetFirstentry() {
+	return {
+		type: types.RESET_FIRSTENTRY
+	}
+}
+
+export function deletePrevious() {
 	return(dispatch, getState) => {
 		const { expression } = getState().expression;
 		if ( parseInt(expression.slice(-1)) || expression.slice(-1)[0] === '.' || expression.slice(-1)[0] === '0') {
-			dispatch({ type: types.SLICE_DISPLAY });
+			dispatch(sliceDisplay());
 		} else {
-			dispatch({ type: types.TOGGLE_FIRSTENTRY });
+			dispatch(toggleFirstentry());
 		} 
-		dispatch({ type: types.SLICE_EXPRESSION });
+		dispatch(sliceExpression());
 	}
 }
 
-export function updateDisplay(text) {
+function sliceDisplay() {
+	return {
+		type: types.SLICE_DISPLAY
+	}
+}
+
+function sliceExpression() {
+	return {
+		type: types.SLICE_EXPRESSION
+	}
+}
+
+export function updateCalc(text) {
 	
 	return(dispatch,getState) => {
 		const { firstentry } = getState().firstentry;
 		if (firstentry) { 
-			dispatch({type: types.TOGGLE_FIRSTENTRY});
-			dispatch({type: types.FIRSTENTRY_DISPLAY , payload: text});
+			dispatch(toggleFirstentry());
+			dispatch(firstEntry(text));
 		} else {
 			const { expression } = getState().expression;
 			if (parseInt(text) || text === '.' || text === '0') {
-				dispatch({type: types.UPDATE_DISPLAY, payload: text});
+				dispatch(updateDisplay(text));
 			}
 		}
-		dispatch({type: types.UPDATE_EXPRESSION, payload: text});
+		dispatch(updateExpression(text));
 		if (text != '.' && text != '0' && !parseInt(text)) {
-			dispatch({type: types.TOGGLE_FIRSTENTRY});
+			dispatch(toggleFirstentry());
 		}
 	}
 }
 
-export function resultDisplay() {
+function firstEntry(text) {
+	return {
+		type: types.FIRSTENTRY_DISPLAY,
+		payload: text
+	}
+}
+
+function updateDisplay(text) {
+	return {
+		type: types.UPDATE_DISPLAY,
+		payload: text
+	}
+}
+
+function updateExpression(text) {
+	return {
+		type: types.UPDATE_EXPRESSION,
+		payload: text
+	}
+}
+
+export function calcResult() {
 	return (dispatch, getState) => {
-		const { expression } = getState().expression
-		dispatch({type: types.RESULT_DISPLAY, payload: eval(expression.join(''))});
-		dispatch({type: types.CLEAR_EXPRESSION});
-		dispatch({type: types.RESET_FIRSTENTRY});
+		const { expression } = getState().expression;
+		const result = eval(expression.join(''));
+		dispatch(resultDisplay(result));
+		dispatch(clearExpression());
+		dispatch(resetFirstentry());
+	}
+}
+
+function resultDisplay(result) {
+	return {
+		type: types.RESULT_DISPLAY,
+		payload: result
+	}
+}
+
+function toggleFirstentry() {
+	return {
+		type: types.TOGGLE_FIRSTENTRY
 	}
 }
