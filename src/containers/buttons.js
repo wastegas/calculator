@@ -28,10 +28,6 @@ class Buttons extends Component {
 		this.props.action.updateDisplay(v);
 	}
 
-	//handleClick(v) {
-	//	this.props.action.updateExpression(v);
-	//	this.props.action.updateDisplay(v);
-	//}
 	render() {
 			const keys = [
 				{val:"AC", oper:"func"},
