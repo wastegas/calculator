@@ -29,12 +29,12 @@ export function updateDisplay(text) {
 			dispatch({type: types.FIRSTENTRY_DISPLAY , payload: text});
 		} else {
 			const { expression } = getState().expression;
-			if (parseInt(text) || text === '.') {
+			if (parseInt(text) || text === '.' || text === '0') {
 				dispatch({type: types.UPDATE_DISPLAY, payload: text});
 			}
 		}
 		dispatch({type: types.UPDATE_EXPRESSION, payload: text});
-		if (text != '.' && !parseInt(text)) {
+		if (text != '.' && text != '0' && !parseInt(text)) {
 			dispatch({type: types.TOGGLE_FIRSTENTRY});
 		}
 	}
