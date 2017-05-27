@@ -18,14 +18,14 @@ class Buttons extends Component {
 			return;
 		}
 		if (v === 'C') {
-			this.props.action.sliceExpression();
+			this.props.action.deletePrevious();
 			return;
 		}
 		if (v === '=') {
-			this.props.action.resultDisplay();
+			this.props.action.calcResult();
 			return;
 		}
-		this.props.action.updateDisplay(v);
+		this.props.action.updateCalc(v);
 	}
 
 	render() {
