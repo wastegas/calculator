@@ -1,11 +1,17 @@
-import { TOGGLE_FIRSTENTRY } from '../../src/constants/actionTypes';
+import { TOGGLE_FIRSTENTRY, RESET_FIRSTENTRY } from '../../src/constants/actionTypes';
 import * as actions from '../../src/actions';
 
-describe('toggleFirstEntry', () => {
-	it('return action TOGGLE_FIRSTENTRY', () => {
+describe('actions', () => {
+	it('should handle TOGGLE_FIRSTENTRY', () => {
 		const expectedAction = {
 			type: TOGGLE_FIRSTENTRY
 		}
-		expect(actions.toggleFirstEntry()).toEqual(expectedAction)
+		expect(actions.toggleFirstentry()).toEqual(expectedAction)
+	})
+	it('should handle RESET_FIRSTENTRY', () => {
+		const expectedAction = {
+			type: RESET_FIRSTENTRY
+		}
+		expect(actions.resetFirstentry()).toEqual(expectedAction)
 	})
 })
