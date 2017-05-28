@@ -12,10 +12,10 @@ describe('actions', () => {
 		expect(actions.updateDisplay(text)).toEqual(expectedAction)
 	})
 	it('should create an action RESULT_DISPLAY', () => {
-		const text = "1+1";
+		const text = "2";
 		const expectedAction = {
 			type: types.RESULT_DISPLAY,
-			payload: 2 
+			payload: "2" 
 		}
 		expect(actions.resultDisplay(text)).toEqual(expectedAction)
 	})
@@ -24,5 +24,11 @@ describe('actions', () => {
 			type: types.CLEAR_DISPLAY
 		}
 		expect(actions.clearDisplay()).toEqual(expectedAction)
+	})
+	it('should create an action SLICE_DISPLAY', () => {
+		const expectedAction = {
+			type: types.SLICE_DISPLAY
+		}
+		expect(actions.sliceDisplay()).toEqual(expectedAction)
 	})
 })
