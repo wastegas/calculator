@@ -4,7 +4,7 @@ export function resetCalculator() {
 	return(dispatch) => {
 		dispatch(clearExpression());
 		dispatch(clearDisplay());
-		dispatch(resetExpression());
+		dispatch(resetFirstentry());
 	}
 }
 
