@@ -5,7 +5,12 @@ class Display extends Component {
 	render() {
 	return (
 		<div className='display'>
-			{this.props.display}
+			<div className='expression'>
+				{this.props.expression}
+			</div>
+			<div className="input">
+				{this.props.display}
+			</div>
 		</div>
 	   )
 	}
@@ -13,6 +18,7 @@ class Display extends Component {
 
 function mapStateToProps(state, prop) {
 	return {
+		expression: state.expression.expression,
 		display: state.display.display,
 	}
 }
