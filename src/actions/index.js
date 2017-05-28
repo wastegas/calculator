@@ -8,19 +8,19 @@ export function resetCalculator() {
 	}
 }
 
-function clearExpression() {
+export function clearExpression() {
 	return {
 		type: types.CLEAR_EXPRESSION
 	}
 }
 
-function clearDisplay() {
+export function clearDisplay() {
 	return {
 		type: types.CLEAR_DISPLAY
 	}
 }
 
-function resetFirstentry() {
+export function resetFirstentry() {
 	return {
 		type: types.RESET_FIRSTENTRY
 	}
@@ -38,13 +38,13 @@ export function deletePrevious() {
 	}
 }
 
-function sliceDisplay() {
+export function sliceDisplay() {
 	return {
 		type: types.SLICE_DISPLAY
 	}
 }
 
-function sliceExpression() {
+export function sliceExpression() {
 	return {
 		type: types.SLICE_EXPRESSION
 	}
@@ -70,21 +70,21 @@ export function updateCalc(text) {
 	}
 }
 
-function firstEntry(text) {
+export function firstEntry(text) {
 	return {
 		type: types.FIRSTENTRY_DISPLAY,
 		payload: text
 	}
 }
 
-function updateDisplay(text) {
+export function updateDisplay(text) {
 	return {
 		type: types.UPDATE_DISPLAY,
 		payload: text
 	}
 }
 
-function updateExpression(text) {
+export function updateExpression(text) {
 	return {
 		type: types.UPDATE_EXPRESSION,
 		payload: text
@@ -101,14 +101,14 @@ export function calcResult() {
 	}
 }
 
-function resultDisplay(result) {
+export function resultDisplay(result) {
 	return {
 		type: types.RESULT_DISPLAY,
 		payload: result
 	}
 }
 
-function toggleFirstentry() {
+export function toggleFirstentry() {
 	return {
 		type: types.TOGGLE_FIRSTENTRY
 	}
