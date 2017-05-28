@@ -16,49 +16,49 @@ describe('expression', () => {
 	})
 	it('should handle UPDATE_EXPRESSION', () => {
 		expect(
-			expression({expression:""}, 
+			expression({expression:[]}, 
 				{
 					type: types.UPDATE_EXPRESSION, 
 					payload: "1"
 				})
 		).toEqual(
 			{
-				expression: "1"
+				expression: ["1"]
 			}
 		)
 	})
 	expect(
-			expression({expression:"1+"},
+			expression({expression:["1", "+"]},
 					{
 						type: types.UPDATE_EXPRESSION,
 						payload: "1"
 					})
 			).toEqual(
 				{
-					expression: "1+1"
+					expression: ["1","+","1"]
 				}
 			)
 	it('should handle SLICE_EXPRESSION', () => {
 		expect(
-			expression({expression:"1+1"},
+			expression({expression:["1","+","1"]},
 					{
 						type: types.SLICE_EXPRESSION
 					})
 			).toEqual(
 				{
-					expression: "1+"
+					expression: ["1","+"]
 				}
 			)
 	})
 	it('should handle CLEAR_EXPRESSION', () => {
 		expect(
-			expression({expression:"1+1"},
+			expression({expression:["1","+","1"]},
 					{
 						type: types.CLEAR_EXPRESSION
 					})
 			).toEqual(
 				{
-					expression: ""
+					expression: []
 				}
 			)
 	})
