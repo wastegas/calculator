@@ -29,6 +29,8 @@ export function resetFirstentry() {
 export function deletePrevious() {
 	return(dispatch, getState) => {
 		const { expression } = getState().expression;
+		if (expression.length === 0)
+			return;
 		if ( parseInt(expression.slice(-1)) || expression.slice(-1)[0] === '.' || expression.slice(-1)[0] === '0') {
 			dispatch(sliceDisplay());
 		} else {
