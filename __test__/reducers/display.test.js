@@ -30,22 +30,22 @@ describe('display', () => {
 			display({display:"1"},
 				{
 					type: types.UPDATE_DISPLAY,
-					payload: "+"
+					payload: "0"
 				})
 			).toEqual(
 				{
-					display: "1+",
+					display: "10",
 				}
 			)
 		expect(
-			display({display:"1+"},
+			display({display:"10"},
 				{
 					type: types.UPDATE_DISPLAY,
 					payload: "1"
 				})
 			).toEqual(
 				{
-					display: "1+1",
+					display: "101",
 				}
 			)
 	})
@@ -54,23 +54,23 @@ describe('display', () => {
 			display({display:"1"},
 				{
 					type: types.RESULT_DISPLAY,
-					payload: "1+1"
+					payload: "2"
 				})
 			).toEqual(
 				{
-					display: 2,
+					display: "2",
 				}
 			)
 	})
 	it('should handle CLEAR_DISPLAY', () => {
 		expect(
-			display({display:2},
+			display({display:"2"},
 				{
 					type: types.CLEAR_DISPLAY
 				})
 			).toEqual(
 				{
-					display: "",
+					display: "0",
 				}
 			)
 	})
