@@ -1,4 +1,4 @@
-import { TOGGLE_FIRSTENTRY } from '../../src/constants/actionTypes';
+import * as types from '../../src/constants/actionTypes';
 import firstentry from '../../src/reducers/firstentry';
 
 describe('firstentry', () => {
@@ -6,7 +6,19 @@ describe('firstentry', () => {
 		expect(
 			firstentry({firstentry:false},
 				{
-						type: TOGGLE_FIRSTENTRY
+						type: types.TOGGLE_FIRSTENTRY
+				})
+			).toEqual(
+				{
+					firstentry: true
+				}
+			)
+	})
+	it('should handle RESET_FIRSTENTRY', () => {
+		expect (
+			firstentry({firstentry:false},
+				{
+					type: types.RESET_FIRSTENTRY
 				})
 			).toEqual(
 				{
