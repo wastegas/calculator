@@ -2,6 +2,10 @@ Simple Calculator
 =================
 A React-Redux project
 
+Demo
+====
+https://wastegas.github.io/calculator
+
 Setup
 -----
 ```
@@ -16,4 +20,10 @@ Start Dev Server
 ----------------
 ```
 npm run start
+```
+
+Compile
+-------
+```
+npm run production
 ```
